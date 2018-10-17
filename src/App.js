@@ -1,28 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'Marcos',
+            data: []
+        }
+    }
+
+    componentDidMount() {
+        const url = 'https://lcboapi.com/products';
+        const options = {
+            headers: new Headers({Authorization: "Token MDpmZjM1MDIyMC1kMWJhLTExZTgtOGU0OS1kYmQ4ODIxYWJlMzI6QU51SHYzZlAyT1BSNnAwUldlN3IyYVNDSlpPd1JsYWc0clAw"}),
+        };
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(response => console.log(response.result))
+            // .then(response => this.setState({data: response.result}))
+            // .catch(error => console.log('error : ' + error))
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <h1>{this.state.name}</h1>
+                </header>
+            </div>
+        );
+    }
 }
 
 export default App;
