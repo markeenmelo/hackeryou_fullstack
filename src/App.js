@@ -7,7 +7,7 @@ class App extends Component {
         super(props);
         this.state = {
             name: 'Marcos',
-            data: []
+            dataResult: null
         }
     }
 
@@ -19,9 +19,8 @@ class App extends Component {
 
         fetch(url, options)
             .then(res => res.json())
-            .then(response => console.log(response.result))
-            // .then(response => this.setState({data: response.result}))
-            // .catch(error => console.log('error : ' + error))
+            .then(data => this.setState({dataResult: data.result}))
+            .catch(error => console.log('error : ' + error))
     }
 
     render() {
@@ -29,6 +28,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <h1>{this.state.name}</h1>
+                    {console.log(this.state.dataResult)}
                 </header>
             </div>
         );
