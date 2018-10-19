@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
+/*font-family: 'Open Sans', sans-serif;*/
+/*font-family: 'Abril Fatface', cursive;*/
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
 }
 
 .App-header {
@@ -20,6 +19,35 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.beer {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.description {
+  font-family: 'Open Sans', sans-serif;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }
 
 @keyframes App-logo-spin {
