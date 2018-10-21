@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
+
+div {
+    display: block;
+}
+
+.App {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif
+}
+
+.App-header {
+    background-color: rgb(64, 33, 21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(241, 216, 177);
+    font-family: 'Abril Fatface', cursive;
+}
+
+.App-footer {
+    display: flex;
+    height: 30px;
+    background-color: rgb(64, 33, 21);
+    align-items: center;
+    justify-content: center;
+    color: rgb(241, 216, 177);
+    font-family: 'Abril Fatface', cursive;
+    font-size: 6px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

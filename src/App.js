@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
-import BeerList from './components/BeerList'
-import Description from './components/Description'
-import './App.css';
+import './style/App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import BeerSelector from "./components/BeerSelector";
+import Description from "./components/Description";
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            beers: []
+            beers: [],
+            title: 'Beau',
+            footer: `Beaus's prototype - HackerYou FullStack Masterclass project by Marcos Melo`
         }
     }
 
@@ -27,12 +31,15 @@ class App extends Component {
         this.fetchData()
     }
 
+
+
     render() {
         return (
             <div className="App">
                 <div className="beers">
-                    <BeerList data={this.state.beers}/>
-                    <Description description="Good beer"/>
+                    <Header title={this.state.title}/>
+                    <BeerSelector data={this.state.beers}/>
+                    <Footer footer={this.state.footer} />
                 </div>
             </div>
         );

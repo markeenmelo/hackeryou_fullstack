@@ -1,0 +1,10 @@
+.beer-container {
+    display: flex;
+    background-color: red;
+    flex: 2;
+}
+
+.beer-container > div {
+    width: 10px;
+    margin: 10px;
+}
