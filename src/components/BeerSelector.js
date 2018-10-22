@@ -13,7 +13,6 @@ class BeerSelector extends React.Component {
 
     handleChange = (selectedOption) => {
         this.setState({selectedOption});
-        console.log(`Option selected:`, selectedOption);
     };
 
     render() {
@@ -37,9 +36,9 @@ class BeerSelector extends React.Component {
         }
 
         return (
-            <div>
-                <p>{this.state.title}</p>
+            <div className="App">
                 <Select
+                    placeholder={this.state.title}
                     value={selectedOption}
                     onChange={this.handleChange}
                     options={beers(this.props.data)}
