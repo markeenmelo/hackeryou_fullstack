@@ -1,20 +1,24 @@
 import React from 'react';
 
 class Description extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            message: 'this is your description'
-        }
-    }
+    state = {
+        beerSelected: null,
 
-    componentWillReceiveProps(nextProps) {
-        console.log("component got new props", nextProps)
+    };
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+            beerSelected: nextProps.beerselected,
+        }
     }
 
     render() {
         return (
-            <p>{this.state.message}</p>
+            <div>
+                <h1>{this.state.beerSelected.label}</h1>
+                <img alt="No Image available" src={this.state.beerSelected.img} />
+                <h2>{this.state.beerSelected.desc}</h2>
+            </div>
         );
     }
 }

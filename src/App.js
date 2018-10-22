@@ -3,7 +3,6 @@ import './style/App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BeerSelector from "./components/BeerSelector";
-import Description from "./components/Description";
 
 class App extends Component {
     constructor() {
@@ -30,8 +29,6 @@ class App extends Component {
     componentDidMount() {
         this.fetchData()
     }
-
-
 
     render() {
         return (

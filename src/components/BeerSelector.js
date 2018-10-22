@@ -23,11 +23,18 @@ class BeerSelector extends React.Component {
                 .reduce((acc, beer, index) => {
                     acc[index] = {
                         value: beer.id,
-                        label: beer.name
+                        label: beer.name,
+                        desc: beer.serving_suggestion,
+                        img: beer.image_thumb_url
                     };
                     return acc
                 }, [])
         };
+
+        let loadDesc;
+        if (selectedOption !== null) {
+            loadDesc = <Description beerselected={this.state.selectedOption}/>
+        }
 
         return (
             <div>
@@ -37,7 +44,7 @@ class BeerSelector extends React.Component {
                     onChange={this.handleChange}
                     options={beers(this.props.data)}
                 />
-                <Description beerselected={this.state.selectedOption}/>
+                {loadDesc}
             </div>
 
         );
